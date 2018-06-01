@@ -1,0 +1,35 @@
+This code book is a modefication of the "features_info.txt" file availble within the zipped folder containing the data as mentioned in the readme file
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+ #
+# These are the list of the variables that have been renamed to descriptive variable names based on the description mentioned above
+#Only the mean (the names end with the word "mean") & standard deviations (the names end with the abbreviation "std") values have been selected in this data set:
+(the new names are after the ":" "i.e orignal name: new name")
+#Kindly note that, variables can be presented as mean and std, which is experessed as [mean/std], and also can be presented in the 3 directions XYZ, which is expressed as [XYZ]
+for example: BodyAccelerationTime.[mean/std]-XYZ-direction indicates 6 variables: BodyAccelerationTime.mean-X-direction, BodyAccelerationTime.std-X-direction, BodyAccelerationTime.mean-Y-direction, etc
+
+tBodyAcc-XYZ: BodyAccelerationTime.[mean/std]-XYZ-direction
+tGravityAcc-XYZ: GravityAccelerationTime.[mean/std]-[XYZ]-direction
+tBodyAccJerk-XYZ: BodyAccelerationTimeJerk.[mean/std]-[XYZ]-direction
+tBodyGyro-XYZ: BodyGyroscopeTime.[mean/std]-[XYZ]-direction
+tBodyGyroJerk-XYZ: BodyGyroscopeTimeJerk.[mean/std]-[XYZ]-direction
+tBodyAccMag: BodyAccelerationTimeMagnitude.[mean/std]
+tGravityAccMag: GravityAccelerationTimeMagnitude.[mean/std] 
+tBodyAccJerkMag: BodyAccelerationTimeJerkMagnitude.[mean/std]
+tBodyGyroMag: BodyGyroscopeTimeMagnitude.[mean/std]
+tBodyGyroJerkMag: BodyGyroscopeTimeJerkMagnitude.[mean/std]
+fBodyAcc-XYZ: BodyAccelerationFrequency.[mean/std]-[XYZ]-direction
+fBodyAccJerk-XYZ: BodyAccelerationFrequencyJerk.[mean/std]-[XYZ]-direction
+fBodyGyro-XYZ: BodyGyroscopeFrequency.[mean/std]-[XYZ]-direction
+fBodyAccMag: BodyAccelerationFrequencyMagnitude.[mean/std]
+fBodyAccJerkMag: BodyAccelerationFrequencyJerkMagnitude.[mean/std]
+fBodyGyroMag: BodyGyroscopeFrequencyMagnitude.[mean/std]
+fBodyGyroJerkMag: BodyGyroscopeFrequencyJerkMagnitude.[mean/std]
+
+#The data are then summarized by taking the mean values of the above variables for:
+1.all the subjects: taking the means of the variables corrosponding to the 6 acitivies of each of the 30 subject (n=30)
+2.and the 6 activities: taking the means of the variables corrosponding to the 30 subjects of each of the 6 activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) (n=6)
+
